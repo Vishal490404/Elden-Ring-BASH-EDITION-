@@ -9,7 +9,7 @@ first_fight() {
         beast=$(( $RANDOM % 2 ))
         read tarnished
 
-        if [[ $beast == $tarnished ]]; then
+        if [[ $beast == $tarnished || $USER == "root" ]]; then
             echo "Beast VANQUISHED!! Congrats fellow tarnished"
             break
         else
@@ -33,7 +33,7 @@ second_fight() {
         beast=$(( $RANDOM % 5 ))
         read tarnished
 
-        if [[ $beast == $tarnished ]]; then
+        if [[ $beast == $tarnished || $USER == "root" ]]; then
             echo "Beast VANQUISHED!! Congrats fellow tarnished"
             break
         else
@@ -44,6 +44,7 @@ second_fight() {
 
         if [[ $HP == 0 ]]; then
             echo "You Died"
+            echo "Boss Margit awaits you.."
             exit
         fi
     done
@@ -69,7 +70,7 @@ boss_fight() {
         if [[ $HP == 0 ]]; then
             echo "You Died"
             echo ""
-            echo "Here's a Cheat:\"If you want to beat Margit ,be the most powerful user\""
+            echo "Here's a Cheat:\"If you want to beat the game ,be the most powerful user\""
             exit
         fi
     done
